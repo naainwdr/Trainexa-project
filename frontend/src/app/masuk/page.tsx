@@ -2,44 +2,22 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import Navbar from "@/components/Navbar";
 
 export default function MasukPage() {
   const [form, setForm] = useState({ email: "", password: "" });
+  const router = useRouter();
 
   const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
-    alert("Login berhasil!");
+    router.push("/user");
   };
 
   return (
     <div style={{ minHeight: "100vh", background: "#0c0d10", display: "flex", flexDirection: "column" }}>
 
-      {/* ─── NAVBAR (Mengikuti page.tsx) ─── */}
-      <nav className="navbar">
-        {/* Bagian Kiri: Logo */}
-        <div className="navbar-logo">
-          train<span>exa</span>
-        </div>
-
-        {/* Bagian Tengah: Menu */}
-        <ul className="navbar-menu">
-          <li><Link href="/">Beranda</Link></li>
-          <li><Link href="/olahraga">Olahraga</Link></li>
-          <li><Link href="/cara-kerja">Cara Kerja</Link></li>
-          <li><Link href="/pelatih">Pelatih</Link></li>
-          <li><Link href="/ulasan">Ulasan</Link></li>
-        </ul>
-
-        {/* Bagian Kanan: Actions */}
-        <div className="navbar-actions">
-          <Link href="/masuk">
-            <button className="btn-masuk">Masuk</button>
-          </Link>
-          <Link href="/daftar">
-            <button className="btn-daftar">Get Started</button>
-          </Link>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* ─── CONTENT / LOGIN CARD ─── */}
       <div style={{
