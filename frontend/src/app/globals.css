@@ -91,8 +91,11 @@ a {
 }
 
 .navbar-menu li a.active {
-  color: #fcc419;
-  font-weight: 800;
+  color: #1a1a1a;
+  font-weight: 700;
+  background-color: #fcc419;
+  padding: 8px 18px;
+  border-radius: 10px;
 }
 
 /* ─── Tombol Actions (Sesuai Gambar NAV.png) ─── */
