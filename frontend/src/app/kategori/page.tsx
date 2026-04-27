@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
@@ -20,6 +21,7 @@ const sportOptions = ["Bulu Tangkis", "Futsal", "Lari", "Bola Basket", "Renang",
 const locationOptions = ["Jakarta", "Bandung", "Surabaya", "Bekasi", "Lainnya..."];
 
 export default function KategoriPage() {
+  const searchParams = useSearchParams();
   const [search, setSearch] = useState("");
   const [sortBy, setSortBy] = useState("Rating Tinggi");
   const [selectedSports, setSelectedSports] = useState<string[]>([]);
@@ -27,6 +29,12 @@ export default function KategoriPage() {
   const [maxPrice, setMaxPrice] = useState(500000);
   const [minRating, setMinRating] = useState(0);
   const [favs, setFavs] = useState<number[]>([]);
+
+  // Pre-fill search dari query param ?q=
+  useEffect(() => {
+    const q = searchParams.get("q");
+    if (q) setSearch(q);
+  }, [searchParams]);
 
   const toggleSport = (s: string) =>
     setSelectedSports((prev) => prev.includes(s) ? prev.filter((x) => x !== s) : [...prev, s]);

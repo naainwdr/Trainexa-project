@@ -1,6 +1,8 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -54,6 +56,14 @@ const testimonials = [
 ];
 
 export default function Home() {
+  const router = useRouter();
+  const [heroSearch, setHeroSearch] = useState("");
+
+  const handleSearch = () => {
+    const q = heroSearch.trim();
+    router.push(q ? `/kategori?q=${encodeURIComponent(q)}` : "/kategori");
+  };
+
   return (
     <>
       <Navbar />
@@ -76,8 +86,11 @@ export default function Home() {
           <input
             type="text"
             placeholder="Cari berdasarkan cabang olahraga, nama pelatih, atau lokasi..."
+            value={heroSearch}
+            onChange={(e) => setHeroSearch(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && handleSearch()}
           />
-          <button className="btn-cari">Cari</button>
+          <button className="btn-cari" onClick={handleSearch}>Cari</button>
         </div>
         <div className="hero-stats fade-up fade-up-delay-3">
           <div className="hero-stat-item">
@@ -115,7 +128,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <button className="btn-lihat-semua">Lihat Semua →</button>
+        <Link href="/kategori"><button className="btn-lihat-semua">Lihat Semua →</button></Link>
       </section>
 
       {/* ─── HOW TRAINEXA WORKS ─── */}
