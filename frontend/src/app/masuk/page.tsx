@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export default function MasukPage() {
   const [form, setForm] = useState({ email: "", password: "" });
@@ -88,33 +89,7 @@ export default function MasukPage() {
         </div>
       </div>
 
-      {/* ─── FOOTER (Mengikuti page.tsx) ─── */}
-      <footer className="footer">
-        <div className="footer-container">
-          <div className="footer-left">
-            <div className="footer-logo">train<span>exa</span></div>
-            <p className="footer-description">
-              Indonesia's premier sports coaching marketplace. Connecting athletes with certified coaches across 9+ disciplines.
-            </p>
-            <p className="footer-copyright">© 2026 Trainexa. All rights reserved.</p>
-          </div>
-
-          <div className="footer-center">
-            <h2 className="footer-social-title">WHAT'S <span>NEW?</span></h2>
-            <p className="footer-social-subtitle">Follow us on</p>
-            <div className="footer-social-icons">
-              <Link href="#" className="social-icon"><Image src="/tiktok-logo.png" alt="TikTok" width={100} height={40} /></Link>
-              <Link href="#" className="social-icon"><Image src="/facebook-logo.png" alt="FB" width={40} height={40} /></Link>
-              <Link href="#" className="social-icon"><Image src="/instagram-logo.png" alt="IG" width={40} height={40} /></Link>
-              <Link href="#" className="social-icon"><Image src="/youtube-logo.png" alt="YT" width={110} height={40} /></Link>
-            </div>
-          </div>
-
-          <div className="footer-right">
-            <button className="btn-back-to-top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>▲</button>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

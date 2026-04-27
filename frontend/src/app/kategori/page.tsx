@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const coaches = [
   { id: 1, name: "Sofia", specialty: "Bulu Tangkis", location: "Cimpenan, Kota Bandung", rating: 4.96, reviewCount: 391, price: 125000, tags: ["ATP Certified", "Competitive"], image: "/coach2.png", badge: "Full hari ini", emoji: "🏸", bg: "linear-gradient(135deg,#1a1a2e,#16213e)" },
@@ -377,63 +378,7 @@ export default function KategoriPage() {
         </main>
       </div>
 
-      {/* ─── FOOTER ─── */}
-      <footer style={{ background: "#fff", borderTop: "1px solid #eee", padding: "48px 72px 32px" }}>
-        <div style={{ maxWidth: "1300px", margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "40px" }}>
-
-          {/* Left */}
-          <div style={{ maxWidth: "300px" }}>
-            <div style={{ fontSize: "28px", fontWeight: 800, color: "#1a1a1a", marginBottom: "12px" }}>
-              🏅 train<span style={{ color: "#fcc419" }}>exa</span>
-            </div>
-            <p style={{ fontSize: "13px", color: "#666", lineHeight: 1.7, marginBottom: "12px" }}>
-              Platform marketplace pelatih olahraga terpercaya di Indonesia. Menghubungkan pelatih profesional dari individu, tim, dan organisasi.
-            </p>
-            <p style={{ fontSize: "12px", color: "#999" }}>📍 Dipatukur No. 20, Bandung, Jawa Barat 40132</p>
-            <p style={{ fontSize: "12px", color: "#999", marginTop: "6px" }}>© 2026 Trainexa. All rights reserved.</p>
-          </div>
-
-          {/* Center — Social */}
-          <div style={{ textAlign: "center" }}>
-            <h2 style={{ fontSize: "36px", fontWeight: 900, color: "#000", letterSpacing: "-1px", margin: 0, fontFamily: "Arial Black, sans-serif" }}>
-              APA YANG <span style={{ color: "#f1df5d", WebkitTextStroke: "1px #ccc" }}>BARU?</span>
-            </h2>
-            <p style={{ fontSize: "20px", fontWeight: 700, color: "#7a869a", marginTop: "4px", marginBottom: "20px" }}>Ikuti kami di</p>
-            <div style={{ display: "flex", gap: "20px", alignItems: "center", justifyContent: "center" }}>
-              {[
-                { src: "/tiktok-logo.png", alt: "TikTok", w: 80, h: 32 },
-                { src: "/facebook-logo.png", alt: "Facebook", w: 36, h: 36 },
-                { src: "/instagram-logo.png", alt: "Instagram", w: 36, h: 36 },
-                { src: "/youtube-logo.png", alt: "YouTube", w: 90, h: 32 },
-              ].map((s) => (
-                <Link key={s.alt} href="#" style={{ transition: "transform 0.2s", display: "inline-block" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
-                >
-                  <Image src={s.src} alt={s.alt} width={s.w} height={s.h} style={{ objectFit: "contain" }} />
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Right — Back to top */}
-          <div style={{ display: "flex", alignItems: "flex-end" }}>
-            <button
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              style={{
-                background: "#fcc419", border: "none", borderRadius: "8px",
-                width: "44px", height: "44px", fontSize: "18px",
-                cursor: "pointer", display: "flex", alignItems: "center",
-                justifyContent: "center", transition: "background 0.2s",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.background = "#e6b017")}
-              onMouseLeave={(e) => (e.currentTarget.style.background = "#fcc419")}
-            >
-              ▲
-            </button>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

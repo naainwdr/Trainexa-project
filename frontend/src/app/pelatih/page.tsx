@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
+import Footer from "@/components/Footer";
 
 const coaches = [
   { id: 1, name: "Sofia", specialty: "Bulu Tangkis", location: "Cimpenan, Kota Bandung", rating: 4.96, reviewCount: 391, price: 125000, tags: ["ATP Certified", "Competitive"], image: "/coach2.png", badge: "Full hari ini" },
@@ -171,6 +172,7 @@ export default function PelatihPage() {
           </div>
         </main>
       </div>
+      <Footer />
     </div>
   );
 }

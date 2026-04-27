@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import Footer from "@/components/Footer";
 
 export default function DaftarPage() {
   const router = useRouter();
@@ -48,7 +49,7 @@ export default function DaftarPage() {
         }}>
           {/* Logo */}
           <div style={{ marginBottom: "20px" }}>
-            <span style={{ fontSize: "14px" }}>🏅</span>
+            {/* <span style={{ fontSize: "14px" }}>🏅</span> */}
             <span style={{ fontSize: "26px", fontWeight: "800", color: "#fcc419", marginLeft: "6px" }}>
               train<span style={{ color: "#1a1a1a" }}>exa</span> {/* Warna teks "exa" diubah ke gelap agar terbaca */}
             </span>
@@ -129,6 +130,7 @@ export default function DaftarPage() {
           </p>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

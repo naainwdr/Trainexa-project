@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const allReviews = [
   {
@@ -618,6 +619,7 @@ export default function UlasanPage() {
           </Link>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const steps = [
   {
@@ -694,6 +695,7 @@ export default function CaraKerjaPage() {
           </Link>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
