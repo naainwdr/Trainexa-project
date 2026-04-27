@@ -242,7 +242,10 @@ export default function Home() {
               train<span>exa</span>
             </div>
             <p className="footer-description">
-              Indonesia's premier sports coaching marketplace. Connecting athletes with certified coaches across 9+ disciplines.
+              Platform marketplace pelatih olahraga terpercaya di Indonesia. Menghubungkan pelatih profesional dengan individu, tim, dan organisasi.
+            </p>
+            <p className="footer-description">
+              Jl. Dipatiukur No. 35, Bandung, Jawa Barat 40132
             </p>
             <p className="footer-copyright">
               © 2026 Trainexa. All rights reserved.
@@ -252,21 +255,21 @@ export default function Home() {
           {/* Kolom Tengah: What's New & Socials */}
           <div className="footer-center">
             <h2 className="footer-social-title">
-              WHAT'S <span>NEW?</span>
+              APA YANG <span>BARU?</span>
             </h2>
-            <p className="footer-social-subtitle">Follow us on</p>
+            <p className="footer-social-subtitle">Ikuti kami di</p>
             <div className="footer-social-icons">
-              <Link href="#" className="social-icon">
-                <Image src="/tiktok-logo.png" alt="TikTok" width={100} height={40} />
+              <Link href="https://www.tiktok.com/" className="social-icon">
+                <Image src="/tt-logo.png" alt="TikTok" width={110} height={50} />
               </Link>
-              <Link href="#" className="social-icon">
-                <Image src="/facebook-logo.png" alt="Facebook" width={40} height={40} />
+              <Link href="https://www.facebook.com/" className="social-icon">
+                <Image src="/fb-logo.png" alt="Facebook" width={60} height={60} />
               </Link>
-              <Link href="#" className="social-icon">
-                <Image src="/instagram-logo.png" alt="Instagram" width={40} height={40} />
+              <Link href="https://www.instagram.com/" className="social-icon">
+                <Image src="/ig-logo.png" alt="Instagram" width={40} height={40} />
               </Link>
-              <Link href="#" className="social-icon">
-                <Image src="/youtube-logo.png" alt="YouTube" width={110} height={40} />
+              <Link href="https://www.youtube.com/" className="social-icon">
+                <Image src="/yt-logo.png" alt="YouTube" width={110} height={40} />
               </Link>
             </div>
           </div>
