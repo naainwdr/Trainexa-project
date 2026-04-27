@@ -26,9 +26,9 @@ export default function PelatihPage() {
         <ul className="navbar-menu">
           <li><Link href="/">Beranda</Link></li>
           <li><Link href="/kategori">Kategori</Link></li>
+          <li><Link href="/cara-kerja">Cara Kerja</Link></li>
           <li><Link href="/pelatih" className="active">Pelatih</Link></li>
           <li><Link href="/ulasan">Ulasan</Link></li>
-          <li><Link href="/aktivitas">Aktivitas</Link></li>
         </ul>
         <div className="navbar-actions">
           <button className="btn-masuk">Masuk</button>
