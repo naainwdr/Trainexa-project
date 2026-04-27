@@ -16,9 +16,11 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       {/* Bagian Kiri: Logo */}
-      <div className="navbar-logo">
-        train<span>exa</span>
-      </div>
+      <Link href="/" style={{ textDecoration: "none" }}>
+        <div className="navbar-logo">
+          train<span>exa</span>
+        </div>
+      </Link>
 
       {/* Bagian Tengah: Menu */}
       <ul className="navbar-menu">

@@ -19,10 +19,12 @@ export default function NavbarUser({ userName = "Dina Agustina" }: NavbarUserPro
 
   return (
     <nav className="navbar">
-      {/* Logo */}
-      <div className="navbar-logo">
-        🏅 train<span>exa</span>
-      </div>
+      {/* Bagian Kiri: Logo */}
+      <Link href="/user" style={{ textDecoration: "none" }}>
+        <div className="navbar-logo">
+          train<span>exa</span>
+        </div>
+      </Link>
 
       {/* Menu */}
       <ul className="navbar-menu">
