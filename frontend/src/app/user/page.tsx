@@ -1,6 +1,8 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import NavbarUser from "@/components/NavbarUser";
 import Footer from "@/components/Footer";
 
@@ -53,6 +55,14 @@ const testimonials = [
 ];
 
 export default function UserHomePage() {
+  const router = useRouter();
+  const [heroSearch, setHeroSearch] = useState("");
+
+  const handleSearch = () => {
+    const q = heroSearch.trim();
+    router.push(q ? `/user/kategori?q=${encodeURIComponent(q)}` : "/user/kategori");
+  };
+
   return (
     <>
       <NavbarUser userName="Dina Agustina" />
@@ -75,8 +85,11 @@ export default function UserHomePage() {
           <input
             type="text"
             placeholder="Cari berdasarkan cabang olahraga, nama pelatih, atau lokasi..."
+            value={heroSearch}
+            onChange={(e) => setHeroSearch(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && handleSearch()}
           />
-          <button className="btn-cari">Cari</button>
+          <button className="btn-cari" onClick={handleSearch}>Cari</button>
         </div>
         <div className="hero-stats fade-up fade-up-delay-3">
           <div className="hero-stat-item">
@@ -114,7 +127,7 @@ export default function UserHomePage() {
             </div>
           ))}
         </div>
-        <button className="btn-lihat-semua">Lihat Semua →</button>
+        <Link href="/user/kategori"><button className="btn-lihat-semua">Lihat Semua →</button></Link>
       </section>
 
       {/* ─── HOW TRAINEXA WORKS ─── */}
@@ -182,7 +195,12 @@ export default function UserHomePage() {
                       <span className="coach-card-price">Rp {coach.price}K</span>
                       <span className="coach-card-persesi"> / sesi</span>
                     </div>
-                    <button className="btn-pesan">Pesan</button>
+                    <button
+                      className="btn-pesan"
+                      onClick={(e) => { e.preventDefault(); router.push("/user/pesan"); }}
+                    >
+                      Pesan
+                    </button>
                   </div>
                 </div>
               </div>
@@ -228,8 +246,7 @@ export default function UserHomePage() {
           Lebih dari 2.400+ pelatih terverifikasi. Bayar per sesi dan tidak ada komitmen.
         </p>
         <div className="cta-actions">
-          <Link href="/kategori"><button className="btn-cta-primary">Mulai Sekarang</button></Link>
-          <Link href="/pelatih"><button className="btn-cta-secondary">Temukan Pelatih →</button></Link>
+          <Link href="/user/pelatih"><button className="btn-cta-primary">Temukan Pelatih →</button></Link>
         </div>
       </section>
 

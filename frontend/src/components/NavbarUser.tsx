@@ -4,9 +4,9 @@ import { usePathname } from "next/navigation";
 
 const navLinks = [
   { href: "/user", label: "Beranda" },
-  { href: "/kategori", label: "Kategori" },
-  { href: "/pelatih", label: "Pelatih" },
-  { href: "/ulasan", label: "Ulasan" },
+  { href: "/user/kategori", label: "Kategori" },
+  { href: "/user/pelatih", label: "Pelatih" },
+  { href: "/user/ulasan", label: "Ulasan" },
   { href: "/user/aktivitas", label: "Aktivitas" },
 ];
 
