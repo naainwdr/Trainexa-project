@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import NavbarUser from "@/components/NavbarUser";
 import Footer from "@/components/Footer";
@@ -20,6 +20,7 @@ const sportOptions = ["Bulu Tangkis", "Futsal", "Lari", "Bola Basket", "Renang",
 const locationOptions = ["Jakarta", "Bandung", "Surabaya", "Bekasi", "Lainnya..."];
 
 export default function UserKategoriPage() {
+  const router = useRouter();
   const searchParams = useSearchParams();
   const [search, setSearch] = useState("");
   const [sortBy, setSortBy] = useState("Rating Tinggi");
@@ -336,19 +337,18 @@ export default function UserKategoriPage() {
                           <span style={{ fontSize: "20px", fontWeight: 800 }}>Rp {(coach.price / 1000).toFixed(0)}K</span>
                           <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.4)" }}> / sesi</span>
                         </div>
-                        <Link href="/user/pesan" onClick={(e) => e.stopPropagation()}>
-                          <button
-                            style={{
-                              background: "#FFD700", color: "#000",
-                              border: "none", borderRadius: "8px",
-                              padding: "9px 24px", fontSize: "13px",
-                              fontWeight: 700, cursor: "pointer",
-                              fontFamily: "var(--font)", transition: "all 0.2s",
-                            }}
-                          >
-                            Pesan
-                          </button>
-                        </Link>
+                        <button
+                          onClick={(e) => { e.preventDefault(); e.stopPropagation(); router.push("/user/pesan"); }}
+                          style={{
+                            background: "#FFD700", color: "#000",
+                            border: "none", borderRadius: "8px",
+                            padding: "9px 24px", fontSize: "13px",
+                            fontWeight: 700, cursor: "pointer",
+                            fontFamily: "var(--font)", transition: "all 0.2s",
+                          }}
+                        >
+                          Pesan
+                        </button>
                       </div>
                     </div>
                   </div>
